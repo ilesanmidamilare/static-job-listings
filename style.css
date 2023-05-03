@@ -1,0 +1,316 @@
+/* Reset css */
+
+:root{
+    font-size: 62.5%;
+    /* 1rem = 16px */
+    /* 16px x 0.625 = 10 (ignore the 'px' unit at the back)*/
+    /* all font-size = 62.5% --> 'rem unit' x (16 x 0.625) OR*/ 
+    /* all font-size = 62.5% --> 'rem unit' x 10 */
+    /* so, 1rem = 10px, 0.1rem = 1px, 2.4rem = 24px.... */
+
+
+    /* ### Primary */
+    --Desaturated-Dark-Cyan: hsl(180, 29%, 50%);
+
+    /* ### Neutral */
+    --Background: hsl(180, 52%, 96%);
+    --Light-Grayish-Cyan2: hsl(0, 0%, 100%);
+    --Filter-Tablets: hsl(180, 31%, 95%);
+    --Dark-Grayish-Cyan: hsl(180, 8%, 52%);
+    --Very-Dark-Grayish-Cyan: hsl(180, 14%, 20%);
+}
+
+ 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+*, div {
+    margin: 0;
+    padding: 0;
+}
+
+html { 
+    color-scheme: dark light;
+    font-family: 'League Spartan', sans-serif;
+}
+
+img, picture, svg, video {
+    display: block;
+    max-width: 100%;
+}
+
+/* ============== Header =============== */
+body{
+    font-family: 'League Spartan', sans-serif;
+    margin: auto;
+    background-color: var(--Background);
+}
+
+header {
+    position: relative;
+    background-color: var(--Desaturated-Dark-Cyan);
+    min-width: 37.5rem;
+    width: 100%;
+    margin-bottom: 3rem;
+}
+
+
+header .banner {
+    height: 15rem;
+    background-image: url(images/bg-header-mobile.svg);
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* ============== Search =============== */
+.search {
+    width: 90%;
+    display: flex;
+    position: absolute;
+    bottom: -28px;
+    left: 5%;
+    background-color: white;
+    border-radius: .5rem;
+    padding: 1rem;
+    justify-content: space-between;
+    box-shadow: 0.3rem 0.4rem 0.6rem 0.1rem hsl(180, 14%, 20%, 0.1);
+}
+
+
+.tag_and_input_container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+ .tags {
+    display: flex;
+    font-weight: 500;
+    gap: 1rem;
+    
+}
+
+ .tag {
+    background-color: var(--Background);
+    font-size: 2rem;
+    padding: .5rem 1.5rem;
+    border-radius: .5rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    color: var(--Desaturated-Dark-Cyan);
+}
+
+.search .tag .fa-rectangle-xmark:hover {
+    cursor: pointer;
+    color: var(--Very-Dark-Grayish-Cyan);
+}
+
+.input-container input {
+    outline: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--Desaturated-Dark-Cyan);
+    padding: .5rem 0rem;
+}
+
+ .clear {
+    align-self: center;
+    font-size: 1.5rem;
+    color: var(--Dark-Grayish-Cyan);
+}
+
+ .clear p:hover{
+    cursor: pointer;
+    border-bottom: 2px solid var(--Desaturated-Dark-Cyan);
+    color: var(--Desaturated-Dark-Cyan);
+}
+
+/* ====== Joblistings ====== */
+.joblistings{
+    min-width: 37.5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-block: 6rem;
+    gap: 5rem;
+}
+
+.joblisting {
+    background-color: white;
+    border-radius: .5rem;
+    padding:0 2rem;
+    box-shadow: 0.3rem 0.4rem 0.6rem 0.1rem hsl(180, 14%, 20%, 0.1);
+    width: 90%;
+    margin: auto;
+}
+
+
+.joblist-details{
+    position: relative;
+}
+
+.joblisting:hover {
+    border-left: 0.5rem solid var(--Desaturated-Dark-Cyan);
+}
+
+.company-logo{
+    position: absolute;
+    top: -3rem;
+    left: 1rem;
+    width: 6rem;
+}
+
+.joblist-details .row {
+    padding-top: 4rem;
+    display: flex;
+    gap: 1rem;
+    font-size: 2rem;
+}
+
+.joblist-details .row .company-name {
+    color: var(--Desaturated-Dark-Cyan);
+    align-self: center;
+    padding-right: 1.5rem;
+}
+
+
+.joblist-details .row .new {
+    background-color: var(--Desaturated-Dark-Cyan);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    align-self: center;
+}
+
+.joblist-details .row .featured {
+    background-color: var(--Very-Dark-Grayish-Cyan);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    align-self: center;
+}
+
+.joblist-details .role {
+    font-size: 1.5rem;
+    padding-block: 1rem;
+    color: var(--Very-Dark-Grayish-Cyan);
+}
+
+.joblist-details .role:hover {
+    color: var(--Desaturated-Dark-Cyan);
+    cursor: pointer;
+}
+
+
+.joblist-timing {
+    display: flex;
+    color: var(--Dark-Grayish-Cyan);
+    padding-bottom: 2rem;
+    font-size: 1.5rem;
+    gap: 1rem; 
+}
+
+.joblisting-tags {
+    display: flex;
+    font-size: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+    border-top: 2px solid var(--Dark-Grayish-Cyan);
+    padding-block: 2rem;
+}
+
+.tag-joblisting {
+    background-color: var(--Background);
+    color:  var(--Desaturated-Dark-Cyan);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem; 
+    font-size: 1.5rem;
+}
+
+.joblisting-tags .tag:hover {
+    background-color: var(--Desaturated-Dark-Cyan);
+    color: var(--Background);
+    cursor: pointer;
+}
+
+
+
+/* media query */
+@media only screen and (min-width: 1100px) {
+    /* ============== Header =============== */
+    header .banner {
+        background-image: url(images/bg-header-desktop.svg);
+    }
+
+    .search {
+        width: 70%;
+        left: 15%;
+        font-size: 1.5rem;
+        padding: 1rem 3rem;
+    }
+
+    .search .tag {
+        font-size: 1.5rem;
+        font-weight: 700;  
+    }
+
+    .search .tag {
+        padding: .2rem 1.0rem;
+    }
+
+    /* ========== joblistings ============== */
+    .joblisting {
+        width: 70%;
+        display: flex;
+        justify-content: space-between;
+        padding: 2rem 3rem;
+    }
+
+    .company-logo{
+        position: static;
+        width: 6rem;
+        height: 6rem;
+        align-self: center;
+    }
+
+    .joblist-details {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .joblist-details .row {
+        padding-top: 0rem;
+        font-size: 1.5rem;
+    }
+
+    .joblist-timing {
+        display: flex;
+        color: var(--Dark-Grayish-Cyan);
+        padding-bottom: 0rem;
+        font-size: 1.2rem;
+        gap: 1rem; 
+    }
+
+    .joblist-details .row .company-name {
+        color: var(--Desaturated-Dark-Cyan);
+        align-self: center;
+        padding-right: 1.5rem;
+    }
+
+    .joblist-details .row .company-name {
+        padding-right: 0rem;
+    }
+
+    .joblist-details .row .new, .joblist-details .row .featured {
+        padding: 0.2rem 0.5rem;
+    }
+    
+    .joblisting-tags {
+        border-top: none;
+        font-size: 1.5rem;
+    }
+}
